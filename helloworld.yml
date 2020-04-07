@@ -1,6 +1,29 @@
 ---
 - name: Hello World!
+ vars:
+    api_key: "{{ secret=lookup('hashi_vault','secret/data/test:value token=p-fgs9gjy5tjzu..vxTqLEdhVzUFJArkH+wQX1uTrXwchczlqNng84nxgXw= url=http://host.docker.internal:8200') }}"
+    
   hosts: localhost
+
+  pre_tasks:
+    - name: Install Pip
+      apt: 
+        name: python-pip
+        state: latest
+
+    - name: Install ansible pip dependencies for Ansible
+      pip:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - pip
+        - psycopg2
+        - boto
+        - hvac
+        - "hvac[parser]"
+ 
+    - debug:
+        var: "{{ api_key }}"
 
   tasks:
 
@@ -9,4 +32,4 @@
     
   - name: "What's my name again?"
     debug:
-       msg: '{{ akeyless_key }} {{ akeyless_key_k }}'
+       msg: '{{ api_key }}'
