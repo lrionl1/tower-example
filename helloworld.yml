@@ -14,5 +14,5 @@
       shell: "echo \"Hi! Tower is working! version 3\""
     - 
       debug: 
-        msg: "{{ start_args }}"
+        msg: "{{ akeyless_key_k }}"
       name: "What's my name again?"
