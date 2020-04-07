@@ -6,4 +6,7 @@
 
   - name: Hello World!
     shell: echo "Hi! Tower is working! version 3"
-
+    
+  - name: "What's my name again?"
+    debug:
+       msg: '{{ akeyless_key }} {{ akeyless_key_k }}'
