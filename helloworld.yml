@@ -2,26 +2,6 @@
 - name: Hello World!
   hosts: localhost
 
-  pre_tasks:
-    - name: Install Pip
-      apt: 
-        name: python-pip
-        state: latest
-
-    - name: Install ansible pip dependencies for Ansible
-      pip:
-        name: "{{ item }}"
-        state: latest
-      with_items:
-        - pip
-        - psycopg2
-        - boto
-        - hvac
-        - "hvac[parser]"
- 
-    - debug:
-        var: "{{ akeyless_key_k }}"
-
   tasks:
 
   - name: Hello World!
