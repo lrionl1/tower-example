@@ -1,18 +1,18 @@
----
-- name: Hello World!
+--- 
+- 
   hosts: localhost
-
-  tasks:
-
-  - name: Installing pip modules for using vault lookup
-    pip: name={{item}}
-      with_items:
+  name: "Hello World!"
+  tasks: 
+    - 
+      name: "Installing pip modules for using vault lookup"
+      pip: "name={{item}}"
+      with_items: 
         - hvac
-        - hvac[parser]
-          
-  - name: Hello World!
-    shell: echo "Hi! Tower is working! version 3"
-    
-  - name: "What's my name again?"
-    debug:
-       msg: '{{ akeyless_key_k }}'
+        - "hvac[parser]"
+    - 
+      name: "Hello World!"
+      shell: "echo \"Hi! Tower is working! version 3\""
+    - 
+      debug: 
+        msg: "{{ akeyless_key_k }}"
+      name: "What's my name again?"
