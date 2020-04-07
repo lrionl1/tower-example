@@ -5,4 +5,4 @@
   tasks:
   - name: "What's my name again?"
     debug:
-       msg: '{{ akeyless_key }}'
+       msg: '{{ data }}'
