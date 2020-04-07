@@ -4,6 +4,12 @@
 
   tasks:
 
+  - name: Installing pip modules for using vault lookup
+    pip: name={{item}}
+      with_items:
+        - hvac
+        - hvac[parser]
+          
   - name: Hello World!
     shell: echo "Hi! Tower is working! version 3"
     
