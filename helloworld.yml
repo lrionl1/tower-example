@@ -1,8 +1,8 @@
 ---
-- name: Hello World!
-  hosts: all
- 
+- hosts: all
+  gather_facts: true
+  
   tasks:
- 
-  - name: Hello World!
-    shell: echo "Hi! Tower is working version 2."
+  - name: "What's my name again?"
+    debug:
+       msg: '{{ akeyless_key }}'
