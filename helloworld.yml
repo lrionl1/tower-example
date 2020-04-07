@@ -1,8 +1,9 @@
 ---
-- hosts: all
-  gather_facts: true
-  
+- name: Hello World!
+  hosts: all
+
   tasks:
-  - name: "What's my name again?"
-    debug:
-       msg: '{{ data }}'
+
+  - name: Hello World!
+    shell: echo "Hi! Tower is working! version 2"
+
