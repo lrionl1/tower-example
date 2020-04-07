@@ -14,5 +14,5 @@
       shell: "echo \"Hi! Tower is working! version 3\""
     - 
       debug: 
-        msg: "{{ data }} {{ msg }}"
+        msg: "{{ msg }}"
       name: "What's my name again?"
