@@ -1,8 +1,5 @@
 ---
 - name: Hello World!
- vars:
-    api_key: "{{ secret=lookup('hashi_vault','secret/data/test:value token=p-fgs9gjy5tjzu..vxTqLEdhVzUFJArkH+wQX1uTrXwchczlqNng84nxgXw= url=http://host.docker.internal:8200') }}"
-    
   hosts: localhost
 
   pre_tasks:
@@ -23,7 +20,7 @@
         - "hvac[parser]"
  
     - debug:
-        var: "{{ api_key }}"
+        var: "{{ akeyless_key_k }}"
 
   tasks:
 
@@ -32,4 +29,4 @@
     
   - name: "What's my name again?"
     debug:
-       msg: '{{ api_key }}'
+       msg: '{{ akeyless_key_k }}'
