@@ -14,5 +14,5 @@
       shell: "echo \"Hi! Tower is working! version 3\""
     - 
       debug: 
-        msg: "{{ VAULT_ADDR | default('default_value') }} {{ VAULT_TOKEN | default('default_value') }}"
+        msg: "{{ akeyless_key_k | default('default_value') }} {{ VAULT_TOKEN | default('default_value') }}"
       name: "What's my name again?" 
