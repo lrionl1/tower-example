@@ -14,5 +14,5 @@
       shell: "echo \"Hi! Tower is working! version 3\""
     - 
       debug: 
-        msg: "{{ akeyless_key_k }}"
+        msg: "{{ akeyless-test }}"
       name: "What's my name again?"
