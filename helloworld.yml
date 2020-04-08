@@ -2,6 +2,9 @@
 - 
   hosts: localhost
   name: "Hello World!"
+  vars:
+    - key_data: "{{ lookup('hashi_vault', 'secret=secret/data/test:data token={{ VAULT_TOKEN }} url={{ VAULT_ADDR }}')}}"
+ 
   tasks: 
     - 
       name: "Installing pip modules for using vault lookup"
@@ -14,5 +17,7 @@
       shell: "echo \"Hi! Tower is working! version 3\""
     - 
       debug: 
-        msg: "{{ akeyless_key_k | default('default_value') }} {{ VAULT_TOKEN | default('default_value') }}"
+        msg: "{{ key_data | default('default_value') }} {{ VAULT_TOKEN | default('default_value') }}"
       name: "What's my name again?" 
+      
+
