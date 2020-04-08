@@ -3,7 +3,7 @@
   hosts: localhost
   name: "Hello World!"
   vars:
-    - key_data: "{{ lookup('hashi_vault', 'secret=secret/data/test:data token={{ VAULT_TOKEN }} url={{ VAULT_ADDR }}')}}"
+    - key_data: "{{ lookup('hashi_vault', 'secret=secret/data/test:data token={{ vault_token }} url={{ VAULT_ADDR }}')}}"
  
   tasks: 
     - 
