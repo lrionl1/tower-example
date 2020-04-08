@@ -14,5 +14,5 @@
       shell: "echo \"Hi! Tower is working! version 3\""
     - 
       debug: 
-        msg: "{{ akeyless-test }}"
-      name: "What's my name again?"
+        msg: "{{ data | default('default_value') }} {{ akeyless | default('default_value2') }} {{ KEY | default('default_value2') }} {{ key | default('default_value2') }} {{ data | default('default_value2') }}"
+      name: "What's my name again?" 
