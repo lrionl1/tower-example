@@ -2,13 +2,6 @@
 - 
   hosts: localhost
   name: "Hello World!"
-  vars:
-    - VAULT_TOKEN: "{{ lookup('env','VAULT_TOKEN') }}"
-    - VAULT_ADDR: "{{ lookup('env','VAULT_ADDR') }}"
-    - key_data: "{{ lookup('hashi_vault', 'secret=secret/data/test:data token={{ VAULT_TOKEN }} url={{ VAULT_ADDR }}')}}"
  
   tasks: 
-    - debug: msg="{{ data | default('default_value') }}"
-    - debug: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
-    - debug: msg="{{ lookup('env','key') | default('default_value') }}"
-    - debug: msg="{{ lookup('env','KEY') | default('default_value') }}"
+    - debug: msg="Secrerts are: {{ lookup('env','TOWER_HOST') | default('default_value') }}"
