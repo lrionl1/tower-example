@@ -20,4 +20,8 @@
         msg: "{{ key_data | default('default_value') }} {{ VAULT_TOKEN | default('default_value') }}"
       name: "What's my name again?" 
       
+    - 
+      debug: msg="{{ lookup('env','HOME') }} is an environment variable"
+
+      
 
