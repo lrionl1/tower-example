@@ -3,10 +3,10 @@
   hosts: localhost
   name: "Hello World!"
   vars:
-    - key_data: "{{ lookup('hashi_vault', 'secret=secret/data/test:data token={{ VAULT_TOKEN }} url={{ VAULT_ADDR }}')}}"
+    - key_data: "{{ lookup('hashi_vault', 'secret=secret/data/test:data token={{ lookup('env','VAULT_TOKEN') }} url={{ lookup('env','VAULT_ADDR') }}')}}"
  
   tasks: 
-    - debug: msg="{{ lookup('env','HOME') }} is an environment variable"
+    - debug: msg: "{{ key_data | default('default_value') }}"
     
     - debug: msg="{{ lookup('env','VAULT_TOKEN') }} is an environment variable"
 
