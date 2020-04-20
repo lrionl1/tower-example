@@ -9,4 +9,4 @@
         -
             debug: msg="{{ lookup('env','VAULT_ADDR') | default('default_value') }}"
         -
-            debug: msg="{{  lookup('vault', 'secret/test') }} | default('default_value') }}"
+            debug: msg="{{  lookup('vault', 'secret/data/test') }} | default('default_value') }}"
