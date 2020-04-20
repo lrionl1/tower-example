@@ -1,0 +1,9 @@
+--- 
+- 
+  hosts: localhost
+  name: "Hello World!"
+  environment:
+    VAULT_ADDR: "http://127.0.0.1:8200"
+  
+  tasks: 
+    - debug: msg="{{  lookup('vault', 'secret/test') }} | default('default_value') }}"
