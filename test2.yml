@@ -2,7 +2,7 @@
     hosts: localhost
     name: 'Hello World!'
     environment:
-        VAULT_ADDR: 'http://127.0.0.1:8200'
+        VAULT_ADDR: 'http://host.docker.internal:8200'
     tasks:
         -
             debug: 'msg="{{  lookup("hashi_vault", "secret=secret/data/test:data") }} | default(''default_value'') }}"'
