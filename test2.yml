@@ -5,4 +5,4 @@
         VAULT_ADDR: 'http://127.0.0.1:8200'
     tasks:
         -
-            debug: 'msg="{{  lookup(''vault'', ''secret/test'') }} | default(''default_value'') }}"'
+            debug: 'msg="{{  lookup("hashi_vault", "secret=secret/data/test:data") }} | default(''default_value'') }}"'
