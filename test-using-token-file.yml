@@ -4,3 +4,5 @@
     tasks:
         -
             debug: msg="{{  lookup('vault', 'secret/data/test', 'data') }}"
+            environment:
+                VAULT_TOKEN: 'p-7u06s8juxsf2..7cgBQZMD1WNzA+/v37SoXhm2Jkla8UZ+waz1/qSxCsg='
