@@ -3,4 +3,4 @@
     name: 'Hello World!'
     tasks:
         -
-            debug: msg="{{  lookup('vault', 'secret/data/test', 'data') }} | default('default_value') }}"
+            debug: msg="{{  lookup('vault', 'secret/data/test', 'data') }}"
