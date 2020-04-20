@@ -6,4 +6,4 @@
         VAULT_TOKEN: 'p-xcn1596fg6oh..krGccA91+MD2K6/xmWhyS4PhcYde5AA3CvPA2O9bDdI'
     tasks:
         -
-            debug: 'msg="{{  lookup("hashi_vault", "secret=secret/data/test:data") }} | default(''default_value'') }}"'
+            debug: msg="{{  lookup('vault', 'secret/test') }} | default('default_value') }}"
