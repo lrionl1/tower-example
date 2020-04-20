@@ -3,4 +3,10 @@
     name: 'Hello World!'
     tasks:
         -
-            debug: 'msg="{{  lookup(''vault'', ''secret/test'') }} | default(''default_value'') }}"'
+            debug: msg="{{  lookup('vault', 'secret/test') }} | default('default_value') }}"
+        -
+            debug: msg="{{ lookup('env','VAULT_TOKEN') | default('default_value') }}"
+        -
+            debug: msg="{{ lookup('env','vault_addr') | default('default_value') }}"
+        -
+            debug: msg="{{ lookup('env','VAULT_ADDR') | default('default_value') }}"
