@@ -4,4 +4,4 @@
   name: "Hello World!"
  
   tasks: 
-    - debug: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+    - debug: msg="{{  lookup('vault', 'kv_awx/ansible', 'testhost') }}"
